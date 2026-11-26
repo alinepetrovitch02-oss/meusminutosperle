@@ -97,15 +97,19 @@ input,button,select,textarea{max-width:100%}
 /* Forca os dois totais lado a lado, inclusive em telas estreitas. */
 .cycle-total-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:column!important;width:100%!important}
 .cycle-total-grid>.cycle-total-card{min-width:0!important;width:100%!important}
+
+/* Ícones PNG do menu: carregados da pasta icons do repositório. */
+.nav button img.nav-icon{display:block;object-fit:contain;width:20px!important;height:20px!important;min-width:20px!important;min-height:20px!important;max-width:20px!important;max-height:20px!important;flex:0 0 20px!important;fill:initial;stroke:initial}
+@media(max-width:420px){.nav button img.nav-icon{width:19px!important;height:19px!important;min-width:19px!important;min-height:19px!important;max-width:19px!important;max-height:19px!important;flex-basis:19px!important}}
 </style></head><body><main><h1>MEUS MINUTOS<span id="profileNameTitle"></span></h1><nav class="nav" aria-label="Menu principal">
 <button id="dashboardTab" class="nav-icon-button" type="button" aria-label="Painel" title="Painel">
-<svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.6" style="fill:currentColor;stroke:none"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="1.6" style="fill:currentColor;stroke:none"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.6" style="fill:currentColor;stroke:none"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.6" style="fill:currentColor;stroke:none"/></svg><span class="sr-only">Painel</span></button>
+<img class="nav-icon" src="./icons/inicio.png" alt="" aria-hidden="true" loading="eager"><span class="sr-only">Painel</span></button>
 <button id="historyTab" class="btn-secondary nav-icon-button" type="button" aria-label="Histórico" title="Histórico">
-<svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 10.5a8 8 0 1 1 2.35 5.65" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/><path d="M4 4.8v6h6" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7v5l3.2 2" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only">Histórico</span></button>
+<img class="nav-icon" src="./icons/historico.png" alt="" aria-hidden="true" loading="eager"><span class="sr-only">Histórico</span></button>
 <button id="settingsTab" class="btn-secondary nav-icon-button" type="button" aria-label="Configurações" title="Configurações">
-<svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.4 13.3a7.8 7.8 0 0 0 0-2.6l1.2-.9-1.5-2.6-1.4.5a7.5 7.5 0 0 0-2.2-1.3L15.2 5h-3l-.3 1.4a7.5 7.5 0 0 0-2.2 1.3l-1.4-.5-1.5 2.6 1.2.9a7.8 7.8 0 0 0 0 2.6l-1.2.9 1.5 2.6 1.4-.5a7.5 7.5 0 0 0 2.2 1.3l.3 1.4h3l.3-1.4a7.5 7.5 0 0 0 2.2-1.3l1.4.5 1.5-2.6-1.2-.9Z" fill="currentColor"/><circle cx="13.7" cy="12" r="3.1" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="sr-only">Configurações</span></button>
+<img class="nav-icon" src="./icons/configuracoes.png" alt="" aria-hidden="true" loading="eager"><span class="sr-only">Configurações</span></button>
 <button id="officialHoursTab" class="official-nav btn-secondary nav-icon-button" type="button" aria-label="Consulta Oficial de Horas" title="Consulta Oficial de Horas">
-<svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 2.8h9l5 5V13H5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M14 3v5h5M8 11h7M8 14h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="17.5" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17.5 15.3v2.4l1.5.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only">Consulta Oficial de Horas</span></button>
+<img class="nav-icon" src="./icons/consulta-registros.png" alt="" aria-hidden="true" loading="eager"><span class="sr-only">Consulta Oficial de Horas</span></button>
 </nav><div id="dashboardView">
 <section class="card lifetime-card">
   <div class="label">Resumo desde o início</div>
