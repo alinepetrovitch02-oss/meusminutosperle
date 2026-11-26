@@ -1,0 +1,8 @@
+{
+  "name": "MEUS MINUTOS",
+  "short_name": "MEUS MINUTOS",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101116",
+  "theme_color": "#17191f"
+}
