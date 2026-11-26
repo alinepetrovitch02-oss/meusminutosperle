@@ -1,9 +1,10 @@
-const C='meus-minutos-v25-vercel';
+const C='meus-minutos-v26-vercel';
+const FILES=['./','./index.html','./manifest.json','./icons/inicio.png','./icons/historico.png','./icons/configuracoes.png','./icons/consulta-registros.png'];
 
 self.addEventListener('install',e=>
   e.waitUntil(
     caches.open(C).then(c=>
-      c.addAll(['./','./index.html','./manifest.json'])
+      Promise.all(FILES.map(f=>c.add(f).catch(()=>{})))
     )
   )
 );

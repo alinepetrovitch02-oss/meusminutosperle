@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17191f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MEUS MINUTOS"><link rel="manifest" href="manifest.json"><title>MEUS MINUTOS</title>
 <style>
-*{box-sizing:border-box}body{margin:0;padding:16px;background:#101116;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}main{max-width:520px;margin:auto;background:#17191f;border-radius:22px;padding:14px;box-shadow:0 10px 30px #0005}h1{font-size:20px;margin:4px 2px 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{border-radius:14px;padding:12px;min-width:0}.green{background:#153d2c;color:#77d9a0}.blue{background:#183653;color:#82c6ff}.yellow{background:#493817;color:#f5d477}.red{background:#481f25;color:#ff929a}.label{font-size:12px;font-weight:700}.big{font-size:25px;font-weight:800;margin:5px 0 2px;font-variant-numeric:tabular-nums}.minutes-hours{font-size:10px;font-weight:500;opacity:.62;white-space:nowrap}.sub{font-size:11px;line-height:1.5;opacity:.9}.glass{background:#ffffff24;border:1px solid #ffffff45;border-radius:14px;padding:13px;color:white;margin-top:10px;backdrop-filter:blur(8px)}.line{display:flex;justify-content:space-between;align-items:center;gap:8px}.line strong{font-size:14px}.month-heading{display:flex;flex-direction:column;gap:1px;min-width:0}.month-heading strong{font-size:14px}.month-caption{font-size:10px;line-height:1.2;color:#d0d5df;font-weight:500}.progress{height:8px;background:#ffffff35;border-radius:99px;overflow:hidden;margin:10px 0 7px}.fill{height:100%;background:#d8ac43;border-radius:99px;width:0}.month{background:#55a9ef}.tiny{font-size:11px}.progress-count{white-space:nowrap}.done-text{color:#77d9a0;font-weight:700}.left-text{color:#f5d477;font-weight:700}.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:9px}.amount{font-size:clamp(14px,4vw,18px);font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}.amount-label{font-size:10px;opacity:.85}.cycle-total-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:column;align-items:stretch;gap:9px;width:100%;margin-top:10px}.cycle-total-grid>.cycle-total-card{display:flex!important;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:9px;min-width:0;width:100%;min-height:100px;padding:12px;border-radius:14px;border:1px solid transparent;box-sizing:border-box}.cycle-total-grid>.cycle-total-approved{background:#183653!important;color:#82c6ff!important;border-color:#28577f!important}.cycle-total-grid>.cycle-total-potential{background:#153d2c!important;color:#77d9a0!important;border-color:#236347!important}.cycle-total-grid .cycle-total-label{font-size:11px;line-height:1.3;font-weight:750;overflow-wrap:anywhere}.cycle-total-grid .cycle-total-amount{font-size:clamp(16px,4.4vw,23px);line-height:1.1;font-weight:900;white-space:nowrap;font-variant-numeric:tabular-nums}@media(max-width:360px){.cycle-total-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px}.cycle-total-grid>.cycle-total-card{padding:9px;min-height:94px}.cycle-total-grid .cycle-total-label{font-size:10px}.cycle-total-grid .cycle-total-amount{font-size:clamp(14px,4vw,17px)}}.entry{margin-top:8px;background:#242731;border:1px solid #3b3e49;border-radius:13px;padding:9px 10px}.entry h2{font-size:13px;margin:0 0 5px}.controls{display:flex;gap:6px;margin-bottom:4px}.entry input{padding:8px 10px;font-size:16px;border-radius:9px}.entry #recordBtn{min-height:34px;padding:0 10px;font-size:11px;border-radius:8px;white-space:nowrap}input{flex:1;min-width:0;border:1px solid #555a68;border-radius:10px;background:#11131a;color:white;padding:12px;font-size:17px}button{border:0;border-radius:10px;background:#d8ac43;color:#211a0b;font-weight:800;padding:0 13px;font-size:13px;min-height:42px}.btn-accepted{background:#77d9a0}.btn-rejected{background:#ff929a}.hint{color:#b7bac3;font-size:11px;line-height:1.45;margin:5px 0 0}.entry>.hint{font-size:10px;line-height:1.3;margin:3px 0 0}.undo{margin-top:9px;background:transparent;border:1px solid #626674;color:#eee;padding:9px 12px}footer{text-align:center;color:#92949c;font-size:10px;line-height:1.5;margin:13px 4px 2px}.nav{display:flex;gap:8px;margin:0 0 12px}.official-nav{flex:0 0 76px;min-width:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:7px 4px!important;border-radius:10px;font-size:9px!important;line-height:1.1!important;text-align:center}.official-nav-icon{width:30px;height:30px;display:block}.official-nav span{display:block;max-width:100%;font-size:9px;font-weight:800}.official-nav.active{background:#d9ae42;color:#17181d;border-color:#d9ae42}.official-panel-card{background:#20232b;border:1px solid #444956;border-radius:14px;padding:12px}.official-panel-note{font-size:12px;color:#b8bbc4;margin:0 0 10px}.official-panel-card iframe{display:block;width:100%;height:70vh;min-height:440px;border:1px solid #424754;border-radius:10px;background:#111319}.official-panel-fallback{font-size:12px;color:#b8bbc4;margin-top:10px;line-height:1.5}.official-panel-fallback a{color:#f5d477;font-weight:800}@media(max-width:420px){.official-nav{flex-basis:62px;min-width:58px}.official-nav-icon{width:26px;height:26px}.official-nav span{font-size:8px}.official-panel-card iframe{min-height:360px;height:65vh}}.nav button{flex:1;padding:10px 8px}.nav .nav-link{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border-radius:10px;background:#303440;color:#f2f3f5;border:1px solid #555a68;font-weight:800;padding:10px 6px;font-size:11px;min-height:42px;line-height:1.2}.btn-secondary{background:#303440;color:#f2f3f5;border:1px solid #555a68}.btn-danger{background:#8e343d;color:#fff}.history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:4px 0 12px}.history-head h2{font-size:17px;margin:0}.history-card{background:#242731;border:1px solid #3b3e49;border-radius:14px;padding:13px;margin:9px 0}.history-card h3{font-size:14px;margin:0 0 10px}.history-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.history-item{background:#191c24;border-radius:9px;padding:8px}.history-item span{display:block;font-size:10px;color:#b7bac3;margin-bottom:4px}.history-item strong{font-size:14px;font-variant-numeric:tabular-nums}.history-empty{color:#b7bac3;font-size:13px;text-align:center;padding:28px 12px}.history-progress{height:7px;background:#ffffff25;border-radius:99px;overflow:hidden;margin-top:10px}.history-progress div{height:100%;background:#55a9ef}.reset-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}.reset-row button{flex:1}.reset-row .undo{margin-top:0;background:transparent;border:1px solid #626674;color:#eee;padding:9px 12px}button:focus-visible{outline:2px solid #fff;outline-offset:2px}.fx-setting{display:flex;justify-content:center;align-items:center;gap:5px;margin:3px 0 2px}.fx-setting input{flex:0 1 92px;width:92px;min-width:0;padding:4px 6px;font-size:10px;text-align:center;border-radius:6px}.fx-setting label{font-size:10px;color:#92949c}.settings-note{font-size:12px;line-height:1.5;color:#c4c7d0;margin:0 0 10px}.settings-grid{display:grid;grid-template-columns:1fr;gap:9px}.settings-grid label{display:block;font-size:12px;color:#d5d7dd;margin-bottom:5px}.settings-grid input{width:100%;font-size:16px}.settings-actions{display:flex;justify-content:flex-end;margin-top:10px}
+*{box-sizing:border-box}body{margin:0;padding:16px;background:#101116;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}main{max-width:520px;margin:auto;background:#17191f;border-radius:22px;padding:14px;box-shadow:0 10px 30px #0005}h1{font-size:20px;margin:4px 2px 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{border-radius:14px;padding:12px;min-width:0}.green{background:#153d2c;color:#77d9a0}.blue{background:#183653;color:#82c6ff}.yellow{background:#493817;color:#f5d477}.red{background:#481f25;color:#ff929a}.label{font-size:12px;font-weight:700}.big{font-size:25px;font-weight:800;margin:5px 0 2px;font-variant-numeric:tabular-nums}.minutes-hours{font-size:10px;font-weight:500;opacity:.62;white-space:nowrap}.sub{font-size:11px;line-height:1.5;opacity:.9}.glass{background:#ffffff24;border:1px solid #ffffff45;border-radius:14px;padding:13px;color:white;margin-top:10px;backdrop-filter:blur(8px)}.line{display:flex;justify-content:space-between;align-items:center;gap:8px}.line strong{font-size:14px}.month-heading{display:flex;flex-direction:column;gap:1px;min-width:0}.month-heading strong{font-size:14px}.month-caption{font-size:10px;line-height:1.2;color:#d0d5df;font-weight:500}.progress{height:8px;background:#ffffff35;border-radius:99px;overflow:hidden;margin:10px 0 7px}.fill{height:100%;background:#d8ac43;border-radius:99px;width:0}.month{background:#55a9ef}.tiny{font-size:11px}.progress-count{white-space:nowrap}.done-text{color:#77d9a0;font-weight:700}.left-text{color:#f5d477;font-weight:700}.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:9px}.amount{font-size:clamp(14px,4vw,18px);font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}.amount-label{font-size:10px;opacity:.85}.cycle-total-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:column;align-items:stretch;gap:9px;width:100%;margin-top:10px}.cycle-total-grid>.cycle-total-card{display:flex!important;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:9px;min-width:0;width:100%;min-height:100px;padding:12px;border-radius:14px;border:1px solid transparent;box-sizing:border-box}.cycle-total-grid>.cycle-total-approved{background:#183653!important;color:#82c6ff!important;border-color:#28577f!important}.cycle-total-grid>.cycle-total-potential{background:#153d2c!important;color:#77d9a0!important;border-color:#236347!important}.cycle-total-grid .cycle-total-label{font-size:11px;line-height:1.3;font-weight:750;overflow-wrap:anywhere}.cycle-total-grid .cycle-total-amount{font-size:clamp(16px,4.4vw,23px);line-height:1.1;font-weight:900;white-space:nowrap;font-variant-numeric:tabular-nums}@media(max-width:360px){.cycle-total-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px}.cycle-total-grid>.cycle-total-card{padding:9px;min-height:94px}.cycle-total-grid .cycle-total-label{font-size:10px}.cycle-total-grid .cycle-total-amount{font-size:clamp(14px,4vw,17px)}}.entry{margin-top:8px;background:#242731;border:1px solid #3b3e49;border-radius:13px;padding:9px 10px}.entry h2{font-size:13px;margin:0 0 5px}.controls{display:flex;gap:6px;margin-bottom:4px}.entry input{padding:8px 10px;font-size:16px;border-radius:9px}.entry #recordBtn{min-height:34px;padding:0 10px;font-size:11px;border-radius:8px;white-space:nowrap}input{flex:1;min-width:0;border:1px solid #555a68;border-radius:10px;background:#11131a;color:white;padding:12px;font-size:17px}button{border:0;border-radius:10px;background:#d8ac43;color:#211a0b;font-weight:800;padding:0 13px;font-size:13px;min-height:42px}.btn-accepted{background:#77d9a0}.btn-rejected{background:#ff929a}.hint{color:#b7bac3;font-size:11px;line-height:1.45;margin:5px 0 0}.entry>.hint{font-size:10px;line-height:1.3;margin:3px 0 0}.undo{margin-top:9px;background:transparent;border:1px solid #626674;color:#eee;padding:9px 12px}footer{text-align:center;color:#92949c;font-size:10px;line-height:1.5;margin:13px 4px 2px}.official-nav{flex:0 0 76px;min-width:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:7px 4px!important;border-radius:10px;font-size:9px!important;line-height:1.1!important;text-align:center}.official-nav-icon{width:30px;height:30px;display:block}.official-nav span{display:block;max-width:100%;font-size:9px;font-weight:800}.official-nav.active{background:#d9ae42;color:#17181d;border-color:#d9ae42}.official-panel-card{background:#20232b;border:1px solid #444956;border-radius:14px;padding:12px}.official-panel-note{font-size:12px;color:#b8bbc4;margin:0 0 10px}.official-panel-card iframe{display:block;width:100%;height:70vh;min-height:440px;border:1px solid #424754;border-radius:10px;background:#111319}.official-panel-fallback{font-size:12px;color:#b8bbc4;margin-top:10px;line-height:1.5}.official-panel-fallback a{color:#f5d477;font-weight:800}@media(max-width:420px){.official-nav{flex-basis:62px;min-width:58px}.official-nav-icon{width:26px;height:26px}.official-nav span{font-size:8px}.official-panel-card iframe{min-height:360px;height:65vh}}.nav .nav-link{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border-radius:10px;background:#303440;color:#f2f3f5;border:1px solid #555a68;font-weight:800;padding:10px 6px;font-size:11px;min-height:42px;line-height:1.2}.btn-secondary{background:#303440;color:#f2f3f5;border:1px solid #555a68}.btn-danger{background:#8e343d;color:#fff}.history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:4px 0 12px}.history-head h2{font-size:17px;margin:0}.history-card{background:#242731;border:1px solid #3b3e49;border-radius:14px;padding:13px;margin:9px 0}.history-card h3{font-size:14px;margin:0 0 10px}.history-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.history-item{background:#191c24;border-radius:9px;padding:8px}.history-item span{display:block;font-size:10px;color:#b7bac3;margin-bottom:4px}.history-item strong{font-size:14px;font-variant-numeric:tabular-nums}.history-empty{color:#b7bac3;font-size:13px;text-align:center;padding:28px 12px}.history-progress{height:7px;background:#ffffff25;border-radius:99px;overflow:hidden;margin-top:10px}.history-progress div{height:100%;background:#55a9ef}.reset-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}.reset-row button{flex:1}.reset-row .undo{margin-top:0;background:transparent;border:1px solid #626674;color:#eee;padding:9px 12px}button:focus-visible{outline:2px solid #fff;outline-offset:2px}.fx-setting{display:flex;justify-content:center;align-items:center;gap:5px;margin:3px 0 2px}.fx-setting input{flex:0 1 92px;width:92px;min-width:0;padding:4px 6px;font-size:10px;text-align:center;border-radius:6px}.fx-setting label{font-size:10px;color:#92949c}.settings-note{font-size:12px;line-height:1.5;color:#c4c7d0;margin:0 0 10px}.settings-grid{display:grid;grid-template-columns:1fr;gap:9px}.settings-grid label{display:block;font-size:12px;color:#d5d7dd;margin-bottom:5px}.settings-grid input{width:100%;font-size:16px}.settings-actions{display:flex;justify-content:flex-end;margin-top:10px}
 .lifetime-card{margin:0 0 7px;background:#222b3b;border:1px solid #43516a;color:#fff;grid-column:1/-1;padding:9px 11px}
 .lifetime-card>.label{font-size:11px;color:#dce6f5;letter-spacing:.15px}
 .lifetime-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:7px}.lifetime-metric{min-width:0;overflow:hidden}.lifetime-value{font-size:clamp(16px,4.5vw,21px);font-weight:850;line-height:1.1;font-variant-numeric:tabular-nums;white-space:normal;overflow-wrap:anywhere}.lifetime-label{font-size:9px;color:#c4ccda;margin-top:3px;line-height:1.2}
@@ -11,12 +11,8 @@
 html{width:100%;min-width:0;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{width:100%;min-width:0;padding:clamp(8px,3vw,16px);overflow-x:hidden}
 main{width:100%;min-width:0;max-width:520px}
-.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;margin:0 0 12px}
-.nav button,.nav .nav-link,.nav .nav-icon-button{width:100%;min-width:0;min-height:0;height:auto;aspect-ratio:1;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:8px!important;border-radius:12px}
 .nav .nav-icon-button{flex:initial;font-size:0;line-height:1}
-.nav .nav-icon{display:block;width:28px;height:28px;flex:0 0 28px;max-width:100%;color:currentColor}
 .nav .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.nav button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .amounts{grid-template-columns:repeat(3,minmax(0,1fr))}
 .history-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -30,8 +26,6 @@ input,button,select,textarea{max-width:100%}
 @media(max-width:360px){
   body{padding:8px}
   main{padding:10px}
-  .nav{gap:6px}
-  .nav .nav-icon{width:25px;height:25px;flex-basis:25px}
   .grid{gap:7px}
   .card{padding:9px}
   .big{font-size:clamp(19px,6vw,25px)}
@@ -56,48 +50,30 @@ input,button,select,textarea{max-width:100%}
 }
 
 
-/* Menu principal: botões pequenos e discretos, com ícones finos */
-.nav{display:flex!important;align-items:center;justify-content:flex-start;gap:9px!important;width:100%;margin:0 0 12px}
-.nav button{flex:0 0 48px!important;width:48px!important;height:48px!important;min-width:48px!important;min-height:48px!important;aspect-ratio:1;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:0!important;border-radius:11px!important}
-.nav button .nav-icon{display:block;width:21px!important;height:21px!important;flex:0 0 21px!important;max-width:21px;color:currentColor;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
-.nav button:focus-visible{outline:2px solid #f0cc69;outline-offset:3px}
-@media(max-width:600px){
-  .nav{gap:7px!important}
-  .nav button{flex-basis:43px!important;width:43px!important;height:43px!important;min-width:43px!important;min-height:43px!important;border-radius:10px!important}
-  .nav button .nav-icon{width:19px!important;height:19px!important;flex-basis:19px!important;max-width:19px}
-}
-@media(max-width:360px){
-  .nav{gap:6px!important}
-  .nav button{flex-basis:40px!important;width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important}
-  .nav button .nav-icon{width:18px!important;height:18px!important;flex-basis:18px!important;max-width:18px}
-}
 /* Sem aviso ou botão alternativo abaixo da consulta */
 #officialHoursView .official-panel-fallback{display:none!important}
 
 
-/* Menu opção 3: botões ocupam a largura disponível sem crescer em altura */
-.nav{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;gap:10px!important;width:100%;margin:0 0 12px}
-.nav button{box-sizing:border-box;width:100%!important;min-width:0!important;height:42px!important;min-height:42px!important;max-height:42px!important;display:flex;align-items:center;justify-content:center;padding:0!important;border-radius:11px!important;overflow:hidden}
-.nav button .nav-icon{display:block;width:20px!important;height:20px!important;min-width:20px!important;min-height:20px!important;max-width:20px!important;max-height:20px!important;flex:0 0 20px!important;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.nav button:focus-visible{outline:2px solid #f0cc69;outline-offset:3px}
 .daily-goal-heading{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0}
 .daily-goal-heading>strong{display:block}
-@media(max-width:600px){
-  .nav{gap:8px!important}
-  .nav button{height:40px!important;min-height:40px!important;max-height:40px!important}
-  .nav button .nav-icon{width:19px!important;height:19px!important;min-width:19px!important;min-height:19px!important;max-width:19px!important;max-height:19px!important;flex-basis:19px!important}
-}
-@media(max-width:360px){
-  .nav{gap:6px!important}
-  .nav button{height:38px!important;min-height:38px!important;max-height:38px!important}
-  .nav button .nav-icon{width:18px!important;height:18px!important;min-width:18px!important;min-height:18px!important;max-width:18px!important;max-height:18px!important;flex-basis:18px!important}
-}
 
 
 /* Forca os dois totais lado a lado, inclusive em telas estreitas. */
 .cycle-total-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:column!important;width:100%!important}
 .cycle-total-grid>.cycle-total-card{min-width:0!important;width:100%!important}
 
+/* Menu principal (regra única) */
+.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;margin:0 0 12px}
+.nav button{box-sizing:border-box;width:100%;min-width:0;height:42px;min-height:0;padding:0!important;border-radius:11px!important;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.nav button:focus-visible{outline:2px solid #f0cc69;outline-offset:3px}
+@media(max-width:600px){.nav{gap:8px}.nav button{height:40px}}
+@media(max-width:360px){.nav{gap:6px}.nav button{height:38px}}
+/* Pop-up de configuração inicial */
+dialog{width:min(92vw,480px);max-height:90vh;overflow:auto;background:#17191f;color:#fff;border:1px solid #444956;border-radius:16px;padding:14px}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+#setupForm label{display:block;font-size:12px;color:#d5d7dd;margin:9px 0 4px}
+#setupForm input{width:100%;font-size:16px}
+#setupErr{color:#ff929a;font-size:12px;min-height:16px;margin:8px 0 0}
 /* Ícones PNG do menu: carregados da pasta icons do repositório. */
 .nav button img.nav-icon{display:block;object-fit:contain;width:20px!important;height:20px!important;min-width:20px!important;min-height:20px!important;max-width:20px!important;max-height:20px!important;flex:0 0 20px!important;fill:initial;stroke:initial}
 @media(max-width:420px){.nav button img.nav-icon{width:19px!important;height:19px!important;min-width:19px!important;min-height:19px!important;max-width:19px!important;max-height:19px!important;flex-basis:19px!important}}
@@ -150,7 +126,7 @@ input,button,select,textarea{max-width:100%}
 <div><label for="lifeAcceptedInput">Minutos aceitos</label><input id="lifeAcceptedInput" type="number" min="0" step="1" inputmode="numeric"></div>
 <div><label for="lifePendingInput">Minutos em análise</label><input id="lifePendingInput" type="number" min="0" step="1" inputmode="numeric"></div>
 <div><label for="lifeRejectedInput">Minutos reprovados</label><input id="lifeRejectedInput" type="number" min="0" step="1" inputmode="numeric"></div>
-</div><div class="settings-actions"><button id="updateLifetimeBtn">Atualizar minutos</button></div></section><section class="entry"><h2>Metas diária e do ciclo</h2><p class="settings-note">Defina quantos minutos deseja cumprir por dia e em cada ciclo. A meta do ciclo considera os minutos válidos (gravados menos recusados) e só reinicia quando você iniciar um novo ciclo manualmente.</p><div class="settings-grid"><div><label for="dailyGoalInput">Meta diária (minutos)</label><input id="dailyGoalInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 180"></div><div><label for="monthlyGoalInput">Meta do ciclo (minutos)</label><input id="monthlyGoalInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 3600"></div><div><label for="cycleCompletedInput">Minutos já concluídos no ciclo</label><input id="cycleCompletedInput" type="number" min="0" step="1" inputmode="numeric" placeholder="Ex.: 240"></div></div><p class="hint">Informe o total de minutos já concluídos no ciclo. Esse valor substitui o progresso exibido no momento da atualização; os novos minutos registrados depois serão acrescentados automaticamente, sem alterar seus lançamentos.</p><div class="settings-actions"><button id="saveGoalsBtn">Salvar metas</button></div></section><section class="entry"><h2>Valores financeiros</h2><p class="settings-note">Altere o valor pago por hora (inicialmente US$ 5,50), a cotação do dólar e a taxa. Os valores do painel e dos pagamentos usarão estas configurações.</p><div class="settings-grid"><div><label for="hourlyRate">Valor por hora (US$)</label><input id="hourlyRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Valor de pagamento por hora em dólares"></div><div><label for="dollarRate">Cotação do dólar (R$)</label><input id="dollarRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Cotação do dólar em reais"></div><div><label for="feeRate">Taxa (%)</label><input id="feeRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Taxa percentual"></div></div></section><section class="entry"><h2>Regras das metas</h2><p class="settings-note">A meta diária e a Meta do ciclo podem ser alteradas acima. O ciclo considera minutos válidos (gravados menos recusados), o progresso do ciclo é reiniciado pelo botão da própria meta no painel.</p></section></section></main>
+</div><div class="settings-actions"><button id="updateLifetimeBtn">Atualizar minutos</button></div></section><section class="entry"><h2>Metas diária e do ciclo</h2><p class="settings-note">Defina quantos minutos deseja cumprir por dia e em cada ciclo. A meta do ciclo considera os minutos válidos (gravados menos recusados) e só reinicia quando você iniciar um novo ciclo manualmente.</p><div class="settings-grid"><div><label for="dailyGoalInput">Meta diária (minutos)</label><input id="dailyGoalInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 180"></div><div><label for="monthlyGoalInput">Meta do ciclo (minutos)</label><input id="monthlyGoalInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 3600"></div><div><label for="cycleCompletedInput">Minutos já concluídos no ciclo</label><input id="cycleCompletedInput" type="number" min="0" step="1" inputmode="numeric" placeholder="Ex.: 240"></div></div><p class="hint">Informe o total de minutos já concluídos no ciclo. Esse valor substitui o progresso exibido no momento da atualização; os novos minutos registrados depois serão acrescentados automaticamente, sem alterar seus lançamentos.</p><div class="settings-actions"><button id="saveGoalsBtn">Salvar metas</button></div></section><section class="entry"><h2>Valores financeiros</h2><p class="settings-note">Altere o valor pago por hora (inicialmente US$ 5,50), a cotação do dólar e a taxa. Os valores do painel e dos pagamentos usarão estas configurações.</p><div class="settings-grid"><div><label for="hourlyRate">Valor por hora (US$)</label><input id="hourlyRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Valor de pagamento por hora em dólares"></div><div><label for="dollarRate">Cotação do dólar (R$)</label><input id="dollarRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Cotação do dólar em reais"></div><div><label for="feeRate">Taxa (%)</label><input id="feeRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Taxa percentual"></div></div></section><section class="entry"><h2>Regras das metas</h2><p class="settings-note">A meta diária e a Meta do ciclo podem ser alteradas acima. O ciclo considera minutos válidos (gravados menos recusados), o progresso do ciclo é reiniciado pelo botão da própria meta no painel.</p></section></section><dialog id="setupDialog"><form id="setupForm" novalidate><h2 style="font-size:17px;margin:0 0 4px">Configuração inicial</h2><div id="setupFields"></div><p id="setupErr" role="alert"></p><div class="settings-actions"><button type="submit">Concluir</button></div></form></dialog></main>
 <script>
 const C={hourly:5.5,dailyGoal:180},K='painelMinutosMii 🌸V1',FXK='painelMinutosCotacaoDolarV2',FEEK='painelMinutosTaxaV1',HOURK='painelMinutosValorHoraV1',DAILYK='painelMinutosMetaDiariaV1',MONTHLYK='painelMinutosMetaMensalV1';
 const PROFILEK='painelMinutosNomeLocalV1',FIRSTSETUPK='painelMinutosConfiguracaoInicialV1';
@@ -159,7 +135,7 @@ let initialSetupPending=!hadSavedState;
 let profileName='';
 try{profileName=(localStorage.getItem(PROFILEK)||'').trim()}catch(e){}
 if(profileName==='Mii 🌸'){profileName='Meu painel';try{localStorage.setItem(PROFILEK,profileName)}catch(e){}}
-if(!profileName){profileName=(prompt('Qual nome deseja exibir neste celular?')||'').trim()||'Meu painel';try{localStorage.setItem(PROFILEK,profileName)}catch(e){}}
+if(!profileName){profileName='Meu painel';try{localStorage.setItem(PROFILEK,profileName)}catch(e){}}
 document.getElementById('profileNameTitle').textContent=profileName?' - '+profileName:'';
 let monthlyGoalMinutes=3600;
 let fx=5.83,fee=.018;try{const savedDaily=localStorage.getItem(DAILYK);if(savedDaily!==null&&Number.isSafeInteger(Number(savedDaily))&&Number(savedDaily)>0)C.dailyGoal=Number(savedDaily);const savedMonthly=localStorage.getItem(MONTHLYK);if(savedMonthly!==null&&Number.isSafeInteger(Number(savedMonthly))&&Number(savedMonthly)>0)monthlyGoalMinutes=Number(savedMonthly);const savedHourly=localStorage.getItem(HOURK);if(savedHourly!==null&&Number.isFinite(Number(savedHourly))&&Number(savedHourly)>0)C.hourly=Number(savedHourly);const savedFx=localStorage.getItem(FXK);if(savedFx!==null&&Number.isFinite(Number(savedFx))&&Number(savedFx)>0)fx=Number(savedFx);const savedFee=localStorage.getItem(FEEK);if(savedFee!==null&&Number.isFinite(Number(savedFee))&&Number(savedFee)>=0&&Number(savedFee)<1)fee=Number(savedFee)}catch(e){}
@@ -440,10 +416,7 @@ function render(){
   put('dailyDone','Feitos: '+fmtMin(s.daily)+' min');
   put('dailyLeft','Faltam: '+fmtMin(Math.max(0,C.dailyGoal-s.daily))+' min');
   document.getElementById('dailyBar').style.width=Math.min(100,s.daily/C.dailyGoal*100)+'%';
-  // Usa o progresso configurado do ciclo, mas também protege contra um marco
-  // salvo incorretamente que tenha absorvido minutos já registrados.
-  const cycleTracked=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
-  const goal=monthlyGoal(), monthlyRecorded=Math.max(cycleProgress(),cycleTracked), monthlyPct=monthlyRecorded/goal*100;
+  const goal=monthlyGoal(), monthlyRecorded=cycleProgress(), monthlyPct=monthlyRecorded/goal*100;
   put('monthlyGoalCaption','Meta configurada de '+fmtMin(goal)+' minutos válidos neste ciclo');
   put('monthlyCount',fmtMin(monthlyRecorded)+' / '+fmtMin(goal)+' min');
   put('monthlyPct',monthlyPct.toLocaleString('pt-BR',{maximumFractionDigits:2})+'% concluído');
@@ -456,9 +429,10 @@ function render(){
   // Os dois totais são exibidos em reais líquidos, já descontada a taxa
   // do Airtm configurada. "Aprovado" considera minutos aceitos e pagos neste
   // ciclo; "se tudo for aceito" considera todos os minutos válidos do ciclo.
-  const cycleAccepted=Math.min(monthlyRecorded,Math.max(0,(Number(s.accepted)||0)+(Number(s.cyclePaid)||0)));
+  const cycleTracked=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
+  const cycleAccepted=Math.min(cycleTracked,Math.max(0,(Number(s.accepted)||0)+(Number(s.cyclePaid)||0)));
   put('cycleAcceptedValue',br(calc(cycleAccepted).n));
-  put('cycleRecordedValue',br(calc(monthlyRecorded).n));
+  put('cycleRecordedValue',br(calc(cycleTracked).n));
 }
 function validWholeNumber(raw){
   if(String(raw).trim()==='')return null;
@@ -585,64 +559,37 @@ document.getElementById('undo').onclick=()=>{
   if(!saveOrRestore(before)){render();return}
   render();
 };
-function promptInitialMinutes(question){
-  while(true){
-    const raw=prompt(question,'0');
-    if(raw===null)return null;
-    const value=String(raw).trim();
-    if(value!==''&&/^\d+$/.test(value)&&Number.isSafeInteger(Number(value)))return Number(value);
-    alert('Informe um número inteiro de minutos igual ou maior que zero.');
-  }
-}
-function promptInitialGoal(question){
-  while(true){
-    const value=promptInitialMinutes(question);
-    if(value===null)return null;
-    if(value>0)return value;
-    alert('A meta precisa ser maior que zero minuto.');
-  }
-}
+const SETUP=[['name','Nome neste aparelho','text'],['total','Quantos minutos você tem gravados desde o início na Perle?'],['paid','Quantos desses minutos já foram pagos?'],['pending','Quantos estão em análise?'],['today','Quantos foram gravados hoje? (entra na meta diária)'],['rejected','Quantos foram rejeitados?'],['daily','Meta diária (minutos)'],['monthly','Meta mensal / do ciclo (minutos)'],['cycle','Quanto dessa meta do ciclo você já concluiu em minutos?']];
+const setupDialog=document.getElementById('setupDialog'),setupErr=document.getElementById('setupErr');
+document.getElementById('setupFields').innerHTML=SETUP.map(([id,label,type])=>'<label for="su_'+id+'">'+label+'</label>'+(type==='text'?'<input id="su_'+id+'" type="text" maxlength="40" autocomplete="name">':'<input id="su_'+id+'" type="number" min="0" step="1" inputmode="numeric" placeholder="'+(id==='daily'||id==='monthly'?'Ex.: '+(id==='daily'?'180':'3600'):'0')+'">')).join('');
+setupDialog.addEventListener('cancel',e=>e.preventDefault());
 function runFirstAccessSetup(){
   if(hadSavedState)return;
   try{if(localStorage.getItem(FIRSTSETUPK)==='1')return}catch(e){}
-  while(true){
-    const total=promptInitialMinutes('Quantos minutos você tem gravados desde o início na Perle?');if(total===null)return;
-    const paid=promptInitialMinutes('Quantos desses minutos já foram pagos?');if(paid===null)return;
-    const pending=promptInitialMinutes('Quantos desses minutos estão em análise?');if(pending===null)return;
-    const today=promptInitialMinutes('Quantos desses minutos foram gravados hoje? (para que seja adicionado na meta diária)');if(today===null)return;
-    const rejected=promptInitialMinutes('Quantos desses minutos foram rejeitados?');if(rejected===null)return;
-    if(paid+pending+rejected>total||today>total){
-      alert('A soma de minutos pagos, em análise e rejeitados não pode ultrapassar os minutos gravados desde o início. Os minutos de hoje também não podem ultrapassar o total geral. Vamos informar os valores novamente.');
-      continue;
-    }
-    const dailyGoalAnswer=promptInitialGoal('Qual sua meta diária em minutos?');if(dailyGoalAnswer===null)return;
-    const monthlyGoalAnswer=promptInitialGoal('Qual sua meta mensal em minutos?');if(monthlyGoalAnswer===null)return;
-    const accepted=total-paid-pending-rejected;
-    // Os minutos pagos são separados do saldo operacional; o restante é distribuído
-    // entre aceitos não pagos, em análise e rejeitados sem alterar as regras existentes.
-    s.total=total-paid;
-    s.accepted=accepted;
-    s.rejected=rejected;
-    s.daily=today;
-    s.day=key();
-    if(!Array.isArray(s.records))s.records=[];
-    if(!Array.isArray(s.payments))s.payments=[];
-    if(paid>0){
-      const financial=calc(paid),date=new Date().toISOString();
-      s.payments.push({minutes:paid,date,usd:financial.u,gross:financial.g,net:financial.n,fx,fee,cycleId:'cycle-'+(s.cycleStartedAt||date)});
-    }
-    s.cyclePaid=paid;
-    s.cycleManualMinutes=0;
-    s.cycleManualTrackedSnapshot=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
-    s.cycleStartedAt=new Date().toISOString();
-    if(!save())return;
-    C.dailyGoal=dailyGoalAnswer;
-    monthlyGoalMinutes=monthlyGoalAnswer;
-    try{localStorage.setItem(DAILYK,String(C.dailyGoal));localStorage.setItem(MONTHLYK,String(monthlyGoalMinutes));localStorage.setItem(FIRSTSETUPK,'1')}catch(e){alert('As metas foram definidas nesta sessão, mas não foi possível gravá-las no armazenamento do navegador. Confira as configurações.');}
-    alert('Configuração inicial concluída! Os minutos restantes foram registrados como aceitos (não pagos).');
-    return;
-  }
+  setupDialog.showModal();
 }
+document.getElementById('setupForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v={};for(const [id] of SETUP)v[id]=document.getElementById('su_'+id).value.trim();
+  const total=validWholeNumber(v.total),paid=validWholeNumber(v.paid),pending=validWholeNumber(v.pending),today=validWholeNumber(v.today),rejected=validWholeNumber(v.rejected),dailyGoalAnswer=validWholeNumber(v.daily),monthlyGoalAnswer=validWholeNumber(v.monthly),cycleDone=validWholeNumber(v.cycle);
+  if(!v.name||[total,paid,pending,today,rejected,cycleDone].includes(null)||!dailyGoalAnswer||!monthlyGoalAnswer){setupErr.textContent='Preencha todos os campos com números inteiros (as metas precisam ser maiores que zero).';return}
+  if(paid+pending+rejected>total||today>total){setupErr.textContent='Pagos + em análise + rejeitados não pode passar do total, e os minutos de hoje também não.';return}
+  setupErr.textContent='';
+  const accepted=total-paid-pending-rejected;
+  s.total=total-paid;s.accepted=accepted;s.rejected=rejected;s.daily=today;s.day=key();
+  if(!Array.isArray(s.records))s.records=[];
+  if(!Array.isArray(s.payments))s.payments=[];
+  if(paid>0){const financial=calc(paid),date=new Date().toISOString();s.payments.push({minutes:paid,date,usd:financial.u,gross:financial.g,net:financial.n,fx,fee,cycleId:'cycle-'+(s.cycleStartedAt||date)})}
+  s.cyclePaid=paid;
+  s.cycleStartedAt=new Date().toISOString();
+  s.cycleManualMinutes=cycleDone;
+  s.cycleManualTrackedSnapshot=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
+  if(!save())return;
+  C.dailyGoal=dailyGoalAnswer;monthlyGoalMinutes=monthlyGoalAnswer;profileName=v.name;
+  document.getElementById('profileNameTitle').textContent=' - '+profileName;
+  try{localStorage.setItem(PROFILEK,profileName);localStorage.setItem(DAILYK,String(C.dailyGoal));localStorage.setItem(MONTHLYK,String(monthlyGoalMinutes));localStorage.setItem(FIRSTSETUPK,'1')}catch(err){alert('Não foi possível gravar as metas no armazenamento do navegador. Confira as configurações.')}
+  setupDialog.close();fillGoalSettings();render();
+});
 let persistStartupState=!initialSetupPending;try{if(localStorage.getItem(FIRSTSETUPK)==='1')persistStartupState=true}catch(e){}
 runFirstAccessSetup();
 try{if(localStorage.getItem(FIRSTSETUPK)==='1')persistStartupState=true}catch(e){}
