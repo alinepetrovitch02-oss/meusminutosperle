@@ -440,7 +440,10 @@ function render(){
   put('dailyDone','Feitos: '+fmtMin(s.daily)+' min');
   put('dailyLeft','Faltam: '+fmtMin(Math.max(0,C.dailyGoal-s.daily))+' min');
   document.getElementById('dailyBar').style.width=Math.min(100,s.daily/C.dailyGoal*100)+'%';
-  const goal=monthlyGoal(), monthlyRecorded=cycleProgress(), monthlyPct=monthlyRecorded/goal*100;
+  // Usa o progresso configurado do ciclo, mas também protege contra um marco
+  // salvo incorretamente que tenha absorvido minutos já registrados.
+  const cycleTracked=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
+  const goal=monthlyGoal(), monthlyRecorded=Math.max(cycleProgress(),cycleTracked), monthlyPct=monthlyRecorded/goal*100;
   put('monthlyGoalCaption','Meta configurada de '+fmtMin(goal)+' minutos válidos neste ciclo');
   put('monthlyCount',fmtMin(monthlyRecorded)+' / '+fmtMin(goal)+' min');
   put('monthlyPct',monthlyPct.toLocaleString('pt-BR',{maximumFractionDigits:2})+'% concluído');
