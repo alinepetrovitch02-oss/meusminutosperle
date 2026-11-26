@@ -594,6 +594,14 @@ function promptInitialMinutes(question){
     alert('Informe um número inteiro de minutos igual ou maior que zero.');
   }
 }
+function promptInitialGoal(question){
+  while(true){
+    const value=promptInitialMinutes(question);
+    if(value===null)return null;
+    if(value>0)return value;
+    alert('A meta precisa ser maior que zero minuto.');
+  }
+}
 function runFirstAccessSetup(){
   if(hadSavedState)return;
   try{if(localStorage.getItem(FIRSTSETUPK)==='1')return}catch(e){}
@@ -607,6 +615,8 @@ function runFirstAccessSetup(){
       alert('A soma de minutos pagos, em análise e rejeitados não pode ultrapassar os minutos gravados desde o início. Os minutos de hoje também não podem ultrapassar o total geral. Vamos informar os valores novamente.');
       continue;
     }
+    const dailyGoalAnswer=promptInitialGoal('Qual sua meta diária em minutos?');if(dailyGoalAnswer===null)return;
+    const monthlyGoalAnswer=promptInitialGoal('Qual sua meta mensal em minutos?');if(monthlyGoalAnswer===null)return;
     const accepted=total-paid-pending-rejected;
     // Os minutos pagos são separados do saldo operacional; o restante é distribuído
     // entre aceitos não pagos, em análise e rejeitados sem alterar as regras existentes.
@@ -626,7 +636,9 @@ function runFirstAccessSetup(){
     s.cycleManualTrackedSnapshot=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
     s.cycleStartedAt=new Date().toISOString();
     if(!save())return;
-    try{localStorage.setItem(FIRSTSETUPK,'1')}catch(e){}
+    C.dailyGoal=dailyGoalAnswer;
+    monthlyGoalMinutes=monthlyGoalAnswer;
+    try{localStorage.setItem(DAILYK,String(C.dailyGoal));localStorage.setItem(MONTHLYK,String(monthlyGoalMinutes));localStorage.setItem(FIRSTSETUPK,'1')}catch(e){alert('As metas foram definidas nesta sessão, mas não foi possível gravá-las no armazenamento do navegador. Confira as configurações.');}
     alert('Configuração inicial concluída! Os minutos restantes foram registrados como aceitos (não pagos).');
     return;
   }
