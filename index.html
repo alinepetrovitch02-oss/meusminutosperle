@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17191f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MEUS MINUTOS"><link rel="manifest" href="manifest.json"><title>MEUS MINUTOS</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:16px;background:#101116;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif}main{max-width:520px;margin:auto;background:#17191f;border-radius:22px;padding:14px;box-shadow:0 10px 30px #0005}h1{font-size:20px;margin:4px 2px 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.card{border-radius:14px;padding:12px;min-width:0}.green{background:#153d2c;color:#77d9a0}.blue{background:#183653;color:#82c6ff}.yellow{background:#493817;color:#f5d477}.red{background:#481f25;color:#ff929a}.label{font-size:12px;font-weight:700}.big{font-size:25px;font-weight:800;margin:5px 0 2px;font-variant-numeric:tabular-nums}.minutes-hours{font-size:10px;font-weight:500;opacity:.62;white-space:nowrap}.sub{font-size:11px;line-height:1.5;opacity:.9}.glass{background:#ffffff24;border:1px solid #ffffff45;border-radius:14px;padding:13px;color:white;margin-top:10px;backdrop-filter:blur(8px)}.line{display:flex;justify-content:space-between;align-items:center;gap:8px}.line strong{font-size:14px}.month-heading{display:flex;flex-direction:column;gap:1px;min-width:0}.month-heading strong{font-size:14px}.month-caption{font-size:10px;line-height:1.2;color:#d0d5df;font-weight:500}.progress{height:8px;background:#ffffff35;border-radius:99px;overflow:hidden;margin:10px 0 7px}.fill{height:100%;background:#d8ac43;border-radius:99px;width:0}.month{background:#55a9ef}.tiny{font-size:11px}.progress-count{white-space:nowrap}.done-text{color:#77d9a0;font-weight:700}.left-text{color:#f5d477;font-weight:700}.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:9px}.amount{font-size:clamp(14px,4vw,18px);font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}.amount-label{font-size:10px;opacity:.85}.entry{margin-top:8px;background:#242731;border:1px solid #3b3e49;border-radius:13px;padding:9px 10px}.entry h2{font-size:13px;margin:0 0 5px}.controls{display:flex;gap:6px;margin-bottom:4px}.entry input{padding:8px 10px;font-size:16px;border-radius:9px}.entry #recordBtn{min-height:34px;padding:0 10px;font-size:11px;border-radius:8px;white-space:nowrap}input{flex:1;min-width:0;border:1px solid #555a68;border-radius:10px;background:#11131a;color:white;padding:12px;font-size:17px}button{border:0;border-radius:10px;background:#d8ac43;color:#211a0b;font-weight:800;padding:0 13px;font-size:13px;min-height:42px}.btn-accepted{background:#77d9a0}.btn-rejected{background:#ff929a}.hint{color:#b7bac3;font-size:11px;line-height:1.45;margin:5px 0 0}.entry>.hint{font-size:10px;line-height:1.3;margin:3px 0 0}.undo{margin-top:9px;background:transparent;border:1px solid #626674;color:#eee;padding:9px 12px}footer{text-align:center;color:#92949c;font-size:10px;line-height:1.5;margin:13px 4px 2px}.nav{display:flex;gap:8px;margin:0 0 12px}.official-nav{flex:0 0 76px;min-width:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:7px 4px!important;border-radius:10px;font-size:9px!important;line-height:1.1!important;text-align:center}.official-nav-icon{width:30px;height:30px;display:block}.official-nav span{display:block;max-width:100%;font-size:9px;font-weight:800}.official-nav.active{background:#d9ae42;color:#17181d;border-color:#d9ae42}.official-panel-card{background:#20232b;border:1px solid #444956;border-radius:14px;padding:12px}.official-panel-note{font-size:12px;color:#b8bbc4;margin:0 0 10px}.official-panel-card iframe{display:block;width:100%;height:70vh;min-height:440px;border:1px solid #424754;border-radius:10px;background:#111319}.official-panel-fallback{font-size:12px;color:#b8bbc4;margin-top:10px;line-height:1.5}.official-panel-fallback a{color:#f5d477;font-weight:800}@media(max-width:420px){.official-nav{flex-basis:62px;min-width:58px}.official-nav-icon{width:26px;height:26px}.official-nav span{font-size:8px}.official-panel-card iframe{min-height:360px;height:65vh}}.nav button{flex:1;padding:10px 8px}.nav .nav-link{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border-radius:10px;background:#303440;color:#f2f3f5;border:1px solid #555a68;font-weight:800;padding:10px 6px;font-size:11px;min-height:42px;line-height:1.2}.btn-secondary{background:#303440;color:#f2f3f5;border:1px solid #555a68}.btn-danger{background:#8e343d;color:#fff}.history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:4px 0 12px}.history-head h2{font-size:17px;margin:0}.history-card{background:#242731;border:1px solid #3b3e49;border-radius:14px;padding:13px;margin:9px 0}.history-card h3{font-size:14px;margin:0 0 10px}.history-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.history-item{background:#191c24;border-radius:9px;padding:8px}.history-item span{display:block;font-size:10px;color:#b7bac3;margin-bottom:4px}.history-item strong{font-size:14px;font-variant-numeric:tabular-nums}.history-empty{color:#b7bac3;font-size:13px;text-align:center;padding:28px 12px}.history-progress{height:7px;background:#ffffff25;border-radius:99px;overflow:hidden;margin-top:10px}.history-progress div{height:100%;background:#55a9ef}.reset-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}.reset-row button{flex:1}.reset-row .undo{margin-top:0;background:transparent;border:1px solid #626674;color:#eee;padding:9px 12px}button:focus-visible{outline:2px solid #fff;outline-offset:2px}.fx-setting{display:flex;justify-content:center;align-items:center;gap:5px;margin:3px 0 2px}.fx-setting input{flex:0 1 92px;width:92px;min-width:0;padding:4px 6px;font-size:10px;text-align:center;border-radius:6px}.fx-setting label{font-size:10px;color:#92949c}.settings-note{font-size:12px;line-height:1.5;color:#c4c7d0;margin:0 0 10px}.settings-grid{display:grid;grid-template-columns:1fr;gap:9px}.settings-grid label{display:block;font-size:12px;color:#d5d7dd;margin-bottom:5px}.settings-grid input{width:100%;font-size:16px}.settings-actions{display:flex;justify-content:flex-end;margin-top:10px}
+.lifetime-card{margin:0 0 7px;background:#222b3b;border:1px solid #43516a;color:#fff;grid-column:1/-1;padding:9px 11px}
+.lifetime-card>.label{font-size:11px;color:#dce6f5;letter-spacing:.15px}
+.lifetime-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:7px}.lifetime-metric{min-width:0;overflow:hidden}.lifetime-value{font-size:clamp(16px,4.5vw,21px);font-weight:850;line-height:1.1;font-variant-numeric:tabular-nums;white-space:normal;overflow-wrap:anywhere}.lifetime-label{font-size:9px;color:#c4ccda;margin-top:3px;line-height:1.2}
+
+.remove-record{background:#6b2930;color:#ffdce0;border:1px solid #a94b55;border-radius:8px;padding:7px 9px;font-size:11px;font-weight:700;flex-shrink:0}.remove-record:active{opacity:.75}.history-details{margin:10px 0;background:#242731;border:1px solid #3b3e49;border-radius:13px;padding:12px}.history-details summary{font-size:13px;font-weight:800;cursor:pointer;list-style:none}.history-details summary::-webkit-details-marker{display:none}.history-details summary:after{content:'＋';float:right;color:#f5d477}.history-details[open] summary:after{content:'−'}.history-month{margin-top:12px}.history-month h3{font-size:12px;color:#f5d477;margin:0 0 7px}.history-month+.history-month{border-top:1px solid #ffffff20;padding-top:10px}.history-details .hint{margin-top:10px}.history-card .history-details{padding:10px;margin-top:12px}.history-card .history-details summary{font-size:12px}</style></head><body><main><h1>MEUS MINUTOS<span id="profileNameTitle"></span></h1><nav class="nav"><button id="dashboardTab">Painel</button><button id="historyTab" class="btn-secondary">Histórico</button><button id="settingsTab" class="btn-secondary">Configurações</button><button id="officialHoursTab" class="official-nav btn-secondary" type="button" aria-label="Consulta Oficial de Horas" title="Consulta Oficial de Horas">
+<svg class="official-nav-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="8" y="5" width="25" height="35" rx="4" fill="none" stroke="currentColor" stroke-width="3.2"/><path d="M15 14h11M15 20h8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="33" cy="32" r="11" fill="#303440" stroke="currentColor" stroke-width="3.2"/><path d="M33 25v7l5 3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span>Consulta oficial</span></button></nav><div id="dashboardView">
+<section class="card lifetime-card">
+  <div class="label">Resumo desde o início</div>
+  <div class="lifetime-grid">
+    <div class="lifetime-metric"><div class="lifetime-value" id="lifeTotal">0 min</div><div class="lifetime-label">Minutos desde o início · total geral</div></div>
+    <div class="lifetime-metric"><div class="lifetime-value" id="lifePaid">0 min</div><div class="lifetime-label">Já foi pago</div></div>
+  </div>
+</section>
+<section class="grid">
+<div class="card green"><div class="label">Aceitas</div><div class="big" id="accepted"></div><div class="sub" id="acceptedMoney"></div></div>
+<div class="card blue"><div class="label">Gravado total</div><div class="big" id="total"></div><div class="sub" id="hours"></div></div>
+<div class="card yellow"><div class="label">Em análise</div><div class="big" id="pending"></div><div class="sub" id="pendingMoney"></div></div>
+<div class="card red"><div class="label">Reprovadas</div><div class="big" id="rejected"></div><div class="sub" id="rejectedMoney">R$ 0,00</div></div></section>
+<section class="entry"><h2>Adicionar minutos</h2><div class="controls"><input id="recordInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 45"><button id="recordBtn">Adicionar</button></div><p class="hint">Use somente para minutos novos, ainda não registrados.</p></section>
+<section class="glass"><div class="line"><div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap"><strong>Meta diária</strong><button id="newDailyGoalBtn" class="btn-secondary" style="min-height:25px;padding:4px 7px;font-size:10px;border-radius:7px">Iniciar nova meta diária</button></div><strong id="dailyCount" class="progress-count"></strong></div><div class="progress"><div class="fill" id="dailyBar"></div></div><div class="line tiny"><span id="dailyLeft" class="left-text"></span><span id="dailyDone" class="done-text"></span></div></section>
+<section class="glass"><div class="line"><div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;min-width:0"><div class="month-heading"><strong>Meta do ciclo</strong><span class="month-caption" id="monthlyGoalCaption"></span></div><button id="newCycleGoalBtn" class="btn-secondary" style="min-height:25px;padding:4px 7px;font-size:10px;border-radius:7px">Iniciar nova meta do ciclo</button></div><strong id="monthlyCount" class="progress-count"></strong></div><div class="progress"><div class="fill" id="monthlyBar"></div></div><div class="line tiny"><span id="monthlyLeft" class="left-text"></span><span id="monthlyPct" class="done-text"></span></div><div id="monthlyDailyPace" class="month-caption" style="margin-top:5px;font-size:9px"></div></section>
+
+
+<div class="reset-row"><button id="undo" class="undo">Desfazer última ação</button></div></div><section id="officialHoursView" hidden>
+<div class="history-head"><h2>Consulta Oficial de Horas</h2><button id="officialHoursBack" class="btn-secondary" type="button">Voltar</button></div>
+<div class="official-panel-card">
+<p class="official-panel-note">Painel oficial de consulta de horas.</p>
+<iframe id="officialHoursFrame" title="Painel Oficial de Horas" src="https://painel-oficial-horas.vercel.app" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<div class="official-panel-fallback"><span>Se o painel não carregar aqui,</span> <a href="https://painel-oficial-horas.vercel.app" target="_blank" rel="noopener noreferrer">abra a consulta em uma nova aba</a>.</div>
+</div>
+</section><section id="historyView" hidden><div class="history-head"><h2>Histórico</h2><button id="backToDashboard" class="btn-secondary">Voltar</button></div><div id="historyList"></div></section><section id="settingsView" hidden><div class="history-head"><h2>Configurações</h2><button id="settingsBack" class="btn-secondary">Voltar</button></div><section class="entry"><h2>Nome deste aparelho</h2><p class="settings-note">O nome aparece no topo do painel e fica salvo neste celular.</p><div class="settings-grid"><div><label for="profileNameInput">Nome</label><input id="profileNameInput" type="text" maxlength="40" autocomplete="name" placeholder="Seu nome"></div></div><div class="settings-actions"><button id="saveProfileNameBtn">Salvar nome</button></div></section>
+<section class="entry"><h2>Atualizar minutos desde o início</h2><p class="settings-note">Informe os totais acumulados. Os valores substituem os números exibidos no painel.</p><div class="settings-grid">
+<div><label for="lifePaidInput">Minutos pagos</label><input id="lifePaidInput" type="number" min="0" step="1" inputmode="numeric"></div>
+<div><label for="lifeAcceptedInput">Minutos aceitos</label><input id="lifeAcceptedInput" type="number" min="0" step="1" inputmode="numeric"></div>
+<div><label for="lifePendingInput">Minutos em análise</label><input id="lifePendingInput" type="number" min="0" step="1" inputmode="numeric"></div>
+<div><label for="lifeRejectedInput">Minutos reprovados</label><input id="lifeRejectedInput" type="number" min="0" step="1" inputmode="numeric"></div>
+</div><div class="settings-actions"><button id="updateLifetimeBtn">Atualizar minutos</button></div></section><section class="entry"><h2>Metas diária e do ciclo</h2><p class="settings-note">Defina quantos minutos deseja cumprir por dia e em cada ciclo. A meta do ciclo considera os minutos válidos (gravados menos recusados) e só reinicia quando você iniciar um novo ciclo manualmente.</p><div class="settings-grid"><div><label for="dailyGoalInput">Meta diária (minutos)</label><input id="dailyGoalInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 180"></div><div><label for="monthlyGoalInput">Meta do ciclo (minutos)</label><input id="monthlyGoalInput" type="number" min="1" step="1" inputmode="numeric" placeholder="Ex.: 3600"></div><div><label for="cycleCompletedInput">Minutos já concluídos no ciclo</label><input id="cycleCompletedInput" type="number" min="0" step="1" inputmode="numeric" placeholder="Ex.: 240"></div></div><p class="hint">Informe o total de minutos já concluídos no ciclo. Esse valor substitui o progresso exibido no momento da atualização; os novos minutos registrados depois serão acrescentados automaticamente, sem alterar seus lançamentos.</p><div class="settings-actions"><button id="saveGoalsBtn">Salvar metas</button></div></section><section class="entry"><h2>Valores financeiros</h2><p class="settings-note">Altere o valor pago por hora (inicialmente US$ 5,50), a cotação do dólar e a taxa. Os valores do painel e dos pagamentos usarão estas configurações.</p><div class="settings-grid"><div><label for="hourlyRate">Valor por hora (US$)</label><input id="hourlyRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Valor de pagamento por hora em dólares"></div><div><label for="dollarRate">Cotação do dólar (R$)</label><input id="dollarRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Cotação do dólar em reais"></div><div><label for="feeRate">Taxa (%)</label><input id="feeRate" type="text" inputmode="decimal" autocomplete="off" aria-label="Taxa percentual"></div></div></section><section class="entry"><h2>Regras das metas</h2><p class="settings-note">A meta diária e a Meta do ciclo podem ser alteradas acima. O ciclo considera minutos válidos (gravados menos recusados), o progresso do ciclo é reiniciado pelo botão da própria meta no painel.</p></section></section></main>
+<script>
+const C={hourly:5.5,dailyGoal:180},K='painelMinutosMii 🌸V1',FXK='painelMinutosCotacaoDolarV2',FEEK='painelMinutosTaxaV1',HOURK='painelMinutosValorHoraV1',DAILYK='painelMinutosMetaDiariaV1',MONTHLYK='painelMinutosMetaMensalV1';
+const PROFILEK='painelMinutosNomeLocalV1',FIRSTSETUPK='painelMinutosConfiguracaoInicialV1';
+let hadSavedState=false;try{hadSavedState=localStorage.getItem(K)!==null}catch(e){}
+let initialSetupPending=!hadSavedState;
+let profileName='';
+try{profileName=(localStorage.getItem(PROFILEK)||'').trim()}catch(e){}
+if(profileName==='Mii 🌸'){profileName='Meu painel';try{localStorage.setItem(PROFILEK,profileName)}catch(e){}}
+if(!profileName){profileName=(prompt('Qual nome deseja exibir neste celular?')||'').trim()||'Meu painel';try{localStorage.setItem(PROFILEK,profileName)}catch(e){}}
+document.getElementById('profileNameTitle').textContent=profileName?' - '+profileName:'';
+let monthlyGoalMinutes=3600;
+let fx=5.83,fee=.018;try{const savedDaily=localStorage.getItem(DAILYK);if(savedDaily!==null&&Number.isSafeInteger(Number(savedDaily))&&Number(savedDaily)>0)C.dailyGoal=Number(savedDaily);const savedMonthly=localStorage.getItem(MONTHLYK);if(savedMonthly!==null&&Number.isSafeInteger(Number(savedMonthly))&&Number(savedMonthly)>0)monthlyGoalMinutes=Number(savedMonthly);const savedHourly=localStorage.getItem(HOURK);if(savedHourly!==null&&Number.isFinite(Number(savedHourly))&&Number(savedHourly)>0)C.hourly=Number(savedHourly);const savedFx=localStorage.getItem(FXK);if(savedFx!==null&&Number.isFinite(Number(savedFx))&&Number(savedFx)>0)fx=Number(savedFx);const savedFee=localStorage.getItem(FEEK);if(savedFee!==null&&Number.isFinite(Number(savedFee))&&Number(savedFee)>=0&&Number(savedFee)<1)fee=Number(savedFee)}catch(e){}
+function key(){let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+let s;try{s=JSON.parse(localStorage.getItem(K))}catch(e){}
+if(!s||typeof s!=='object'||Array.isArray(s))s={total:0,accepted:0,rejected:0,daily:0,day:key(),last:0,history:[]};
+if(!Array.isArray(s.history))s.history=[];
+if(!Array.isArray(s.records))s.records=[];if(!Array.isArray(s.payments))s.payments=[];
+for(const field of ['total','accepted','rejected','daily']){
+  const value=Number(s[field]);
+  s[field]=Number.isSafeInteger(value)&&value>=0?value:0;
+}
+if(typeof s.day!=='string'||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(s.day))s.day=key();
+if(!('last' in s))s.last=0;
+if(typeof s.period!=='string'||!/^\d{4}-\d{2}$/.test(s.period))s.period=monthKey();
+
+function monthKey(d=new Date()){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
+function monthlyGoal(){return monthlyGoalMinutes}
+if(!s.period)s.period=monthKey();
+if(typeof s.cycleStartedAt!=='string'||Number.isNaN(new Date(s.cycleStartedAt).getTime())){
+  s.cycleStartedAt=s.period+'-01T00:00:00.000Z';
+  const cycleStart=new Date(s.cycleStartedAt).getTime();
+  s.cyclePaid=(Array.isArray(s.payments)?s.payments:[]).reduce((sum,p)=>{
+    const paidAt=p&&p.date?new Date(p.date).getTime():NaN;
+    return sum+(Number.isFinite(paidAt)&&paidAt>=cycleStart?(Number(p.minutes)||0):0);
+  },0);
+}else if(!Number.isSafeInteger(Number(s.cyclePaid))||Number(s.cyclePaid)<0)s.cyclePaid=0;
+if(!Number.isSafeInteger(Number(s.cycleManualMinutes))||Number(s.cycleManualMinutes)<0)s.cycleManualMinutes=0;
+// Migra a configuração anterior (complemento aditivo) para um marco de progresso substitutivo,
+// preservando exatamente o progresso que a pessoa já via antes desta atualização.
+if(!Number.isSafeInteger(Number(s.cycleManualTrackedSnapshot))||Number(s.cycleManualTrackedSnapshot)<0){
+  const tracked= Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
+  s.cycleManualMinutes=(Number(s.cycleManualMinutes)||0)+tracked;
+  s.cycleManualTrackedSnapshot=tracked;
+}
+function cycleProgress(){const tracked=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);return Math.max(0,(Number(s.cycleManualMinutes)||0)+(tracked-(Number(s.cycleManualTrackedSnapshot)||0)));}
+function monthLabel(value){let parts=value.split('-').map(Number);return new Date(parts[0],parts[1]-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'}).replace(/^./,c=>c.toLocaleUpperCase())}
+
+function save(){try{localStorage.setItem(K,JSON.stringify(s));return true}catch(e){alert('Não foi possível salvar os dados neste aparelho. Verifique o espaço disponível e as permissões do navegador.');return false}}
+function snapshotState(){return JSON.parse(JSON.stringify(s))}
+function saveOrRestore(previous){if(save())return true;s=previous;return false}function br(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}function us(n){return 'US$ '+n.toFixed(2)}
+function calc(m){let u=m/60*C.hourly,g=u*fx;return{u,g,n:g*(1-fee)}}
+function put(id,v){document.getElementById(id).textContent=v}
+function fmtMin(n){return Number(n).toLocaleString('pt-BR',{maximumFractionDigits:1})}
+function toLocalDateTimeInput(value){const d=value?new Date(value):new Date();if(Number.isNaN(d.getTime()))return '';const pad=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes())}
+function minHtml(n){return fmtMin(n)+' min <span class="minutes-hours">('+((Number(n)||0)/60).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' h)</span>'}
+function putMin(id,n){document.getElementById(id).innerHTML=minHtml(n)}
+function recordIsWithinUndoWindow(record){const timestamp=record&&record.date?new Date(record.date).getTime():NaN;const age=Date.now()-timestamp;return Number.isFinite(timestamp)&&age>=0&&age<=(24*60*60*1000)}
+function showView(view){let history=view==='history',settings=view==='settings',official=view==='official';document.getElementById('dashboardView').hidden=history||settings||official;document.getElementById('historyView').hidden=!history;document.getElementById('settingsView').hidden=!settings;document.getElementById('officialHoursView').hidden=!official;document.getElementById('dashboardTab').className=(!history&&!settings&&!official)?'':'btn-secondary';document.getElementById('historyTab').className=history?'':'btn-secondary';document.getElementById('settingsTab').className=settings?'':'btn-secondary';document.getElementById('officialHoursTab').className='official-nav btn-secondary'+(official?' active':'');if(history)renderHistory()}
+function removeHistoryRecord(entry){
+  if(!recordIsWithinUndoWindow(entry.record)){alert('Este lançamento já passou do prazo de 24 horas e não pode mais ser alterado.');renderHistory();return}
+  const amount=Number(entry.record.minutes)||0;
+  if(!confirm('Remover este lançamento de '+fmtMin(amount)+' minutos? Essa ação não pode ser desfeita.'))return;
+  const before=snapshotState();
+  if(entry.current){
+    const index=s.records.indexOf(entry.record);
+    if(index<0)return;
+    const nextTotal=Math.max(0,s.total-amount);
+    if(nextTotal<s.rejected){
+      alert('Não é possível remover este lançamento porque os minutos reprovados ultrapassariam o total restante.');
+      return;
+    }
+    if(s.accepted>=amount)s.accepted-=amount;
+    else if(nextTotal<s.accepted+s.rejected) s.accepted=Math.max(0,nextTotal-s.rejected);
+    s.records.splice(index,1);
+    s.total=nextTotal;
+    const d=entry.record.date?new Date(entry.record.date):null;
+    const recordDay=d&&!Number.isNaN(d.getTime())?d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'):'';
+    if(recordDay===key())s.daily=Math.max(0,s.daily-amount);
+  }else{
+    const archived=s.history[entry.sourceIndex];
+    if(!archived||!Array.isArray(archived.records))return;
+    const index=archived.records.indexOf(entry.record);
+    if(index<0)return;
+    const nextTotal=Math.max(0,(Number(archived.total)||0)-amount);
+    const accepted=Number(archived.accepted)||0,rejected=Number(archived.rejected)||0;
+    if(nextTotal<rejected){alert('Não é possível remover este lançamento porque os minutos reprovados ultrapassariam o total restante deste mês.');return}
+    if(accepted>=amount)archived.accepted=accepted-amount;
+    else if(nextTotal<accepted+rejected)archived.accepted=Math.max(0,nextTotal-rejected);
+    archived.records.splice(index,1);
+    archived.total=nextTotal;
+    archived.pending=Math.max(0,nextTotal-(Number(archived.accepted)||0)-rejected);
+  }
+  if(!saveOrRestore(before)){render();return}
+  renderHistory();render();
+}
+function renderHistory(){
+  const root=document.getElementById('historyList');root.replaceChildren();
+  const allEntries=[
+    ...s.history.map((h,i)=>(Array.isArray(h.records)?h.records:[]).filter(recordIsWithinUndoWindow).map(record=>({record,current:false,sourceIndex:i,period:h.period,cycleId:h.cycleId,label:h.label||monthLabel(h.period)}))).flat(),
+    ...(s.records||[]).filter(recordIsWithinUndoWindow).map(record=>({record,current:true,period:s.period,label:monthLabel(s.period)}))
+  ];
+  const byMonth=new Map();
+  for(const entry of allEntries){
+    const groupKey=entry.cycleId||entry.period+'-'+entry.sourceIndex;
+    if(!byMonth.has(groupKey))byMonth.set(groupKey,{label:entry.label,entries:[]});
+    byMonth.get(groupKey).entries.push(entry);
+  }
+  const recordsDetails=document.createElement('details');recordsDetails.className='entry history-details';
+  const summary=document.createElement('summary');summary.textContent='Lançamentos individuais removíveis nas primeiras 24h ('+allEntries.length+')';recordsDetails.appendChild(summary);
+  if(!allEntries.length){
+    const empty=document.createElement('p');empty.className='hint';empty.textContent='Não há lançamentos nas últimas 24 horas disponíveis para remoção. Após esse prazo, eles ficam ocultos e não podem mais ser alterados.';recordsDetails.appendChild(empty);
+  }else{
+    for(const [period,group] of [...byMonth.entries()].sort((a,b)=>b[0].localeCompare(a[0]))){
+      const month=document.createElement('section');month.className='history-month';
+      const heading=document.createElement('h3');heading.textContent=group.label;month.appendChild(heading);
+      const list=document.createElement('div');list.style.display='grid';list.style.gap='7px';
+      for(const entry of group.entries.slice().reverse()){
+        const rec=entry.record,row=document.createElement('div');row.className='history-item';row.style.display='flex';row.style.justifyContent='space-between';row.style.alignItems='center';row.style.gap='8px';
+        const info=document.createElement('div');info.style.minWidth='0';
+        const date=document.createElement('span');date.textContent=rec.date?new Date(rec.date).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):'Data não disponível';
+        const amount=document.createElement('strong');amount.textContent=fmtMin(rec.minutes)+' min';
+        info.append(date,amount);
+        const remove=document.createElement('button');remove.type='button';remove.textContent='Remover';remove.className='remove-record';remove.addEventListener('click',()=>removeHistoryRecord(entry));
+        row.append(info,remove);list.appendChild(row);
+      }
+      month.appendChild(list);recordsDetails.appendChild(month);
+    }
+  }
+  root.appendChild(recordsDetails);
+
+  const payments=Array.isArray(s.payments)?s.payments:[];
+  const totalPaid=payments.reduce((sum,p)=>sum+(Number(p.minutes)||0),0);
+  const paidUsd=payments.reduce((sum,p)=>sum+(Number(p.usd)||0),0);
+  const paidGross=payments.reduce((sum,p)=>sum+(Number(p.gross)||0),0);
+  const paidNet=payments.reduce((sum,p)=>sum+(Number(p.net)||0),0);
+  const paidCard=document.createElement('article');paidCard.className='history-card';
+  const title=document.createElement('h3');title.textContent='Minutos pagos';paidCard.appendChild(title);
+  const summaryGrid=document.createElement('div');summaryGrid.className='history-grid';
+  const metrics=[['Total de minutos pagos',fmtMin(totalPaid)+' min'],['Em dólar',us(paidUsd)],['Valor sem taxa',br(paidGross)],['Valor com taxa',br(paidNet)]];
+  for(const [label,value] of metrics){const item=document.createElement('div');item.className='history-item';const span=document.createElement('span');span.textContent=label;const strong=document.createElement('strong');strong.textContent=value;item.append(span,strong);summaryGrid.appendChild(item)}
+  paidCard.appendChild(summaryGrid);
+  const paymentDetails=document.createElement('details');paymentDetails.className='history-details';const paymentSummary=document.createElement('summary');paymentSummary.textContent='Histórico de pagamentos ('+payments.length+')';paymentDetails.appendChild(paymentSummary);
+  if(!payments.length){const empty=document.createElement('p');empty.className='hint';empty.textContent='Nenhum pagamento registrado ainda.';paymentDetails.appendChild(empty)}
+  else{
+    const list=document.createElement('div');list.style.display='grid';list.style.gap='7px';
+    for(const payment of payments.slice().reverse()){
+      const row=document.createElement('div');row.className='history-item';row.style.display='grid';row.style.gap='7px';
+      const minutes=document.createElement('strong');minutes.textContent=fmtMin(payment.minutes)+' min pagos';
+      const dateLabel=document.createElement('label');dateLabel.textContent='Data do pagamento';dateLabel.style.fontSize='11px';
+      const dateInput=document.createElement('input');dateInput.type='datetime-local';dateInput.value=toLocalDateTimeInput(payment.date);dateInput.style.width='100%';dateInput.style.padding='8px';
+      dateLabel.appendChild(dateInput);
+      const fields=document.createElement('div');fields.style.display='grid';fields.style.gridTemplateColumns='repeat(3,minmax(0,1fr))';fields.style.gap='6px';
+      const valueInputs=[];
+      for(const [labelText,key] of [['US$','usd'],['R$ sem taxa','gross'],['R$ líquido','net']]){
+        const wrap=document.createElement('label');wrap.textContent=labelText;wrap.style.fontSize='10px';wrap.style.color='#c4c7d0';
+        const inp=document.createElement('input');inp.type='number';inp.step='0.01';inp.min='0';inp.inputMode='decimal';inp.value=(Number(payment[key])||0).toFixed(2);inp.style.width='100%';inp.style.padding='7px 5px';inp.style.fontSize='13px';wrap.appendChild(inp);fields.appendChild(wrap);valueInputs.push(inp);
+      }
+      const saveBtn=document.createElement('button');saveBtn.type='button';saveBtn.textContent='Salvar alterações';saveBtn.className='btn-secondary';saveBtn.style.minHeight='34px';
+      saveBtn.addEventListener('click',()=>{
+        const vals=valueInputs.map(el=>Number(el.value));
+        if(vals.some(v=>!Number.isFinite(v)||v<0)||!dateInput.value){alert('Informe uma data e valores válidos iguais ou maiores que zero.');return}
+        const parsedDate=new Date(dateInput.value);
+        if(Number.isNaN(parsedDate.getTime())){alert('Informe uma data válida.');return}
+        const before=snapshotState();payment.date=parsedDate.toISOString();[payment.usd,payment.gross,payment.net]=vals;
+        if(!saveOrRestore(before)){renderHistory();return}
+        renderHistory();render();
+      });
+      row.append(minutes,dateLabel,fields,saveBtn);list.appendChild(row);
+    }
+    paymentDetails.appendChild(list);
+  }
+  paidCard.appendChild(paymentDetails);root.appendChild(paidCard);
+}
+function archiveCurrentCycle(){
+  const pending=Math.max(0,s.total-s.accepted-s.rejected);
+  const financial=calc(Math.max(0,s.total-s.rejected));
+  const cyclePaid=Number(s.cyclePaid)||0;
+  const started=s.cycleStartedAt||new Date().toISOString();
+  const manualMinutes=Number(s.cycleManualMinutes)||0;
+  return {period:s.period,cycleId:'cycle-'+started,label:'Ciclo iniciado em '+new Date(started).toLocaleDateString('pt-BR'),startedAt:started,closedAt:new Date().toISOString(),total:s.total,accepted:s.accepted,rejected:s.rejected,pending,paid:cyclePaid,manualMinutes,validMinutes:cycleProgress(),gross:financial.g,net:financial.n,records:s.records.slice()};
+}
+function resetMonth(){
+  if(!confirm('Deseja arquivar o ciclo atual e iniciar um novo? O histórico anterior será preservado.'))return;
+  const before=snapshotState();
+  const previous={period:s.period,total:s.total,accepted:s.accepted,rejected:s.rejected,daily:s.daily,day:s.day,history:s.history.slice(),records:s.records.slice(),cyclePaid:s.cyclePaid,cycleManualMinutes:s.cycleManualMinutes,cycleManualTrackedSnapshot:s.cycleManualTrackedSnapshot,cycleStartedAt:s.cycleStartedAt};
+  s.last={type:'resetMonth',previous};
+  s.history.push(archiveCurrentCycle());
+  s.period=monthKey();s.total=0;s.accepted=0;s.rejected=0;s.daily=0;s.day=key();s.records=[];
+  s.cyclePaid=0;s.cycleManualMinutes=0;s.cycleManualTrackedSnapshot=0;s.cycleStartedAt=new Date().toISOString();
+  if(!saveOrRestore(before)){render();return}
+  render();showView('dashboard');
+}
+function parseDecimal(raw){return Number(String(raw).trim().replace(/\s/g,'').replace(',','.'))}
+const dailyGoalInput=document.getElementById('dailyGoalInput'),monthlyGoalInput=document.getElementById('monthlyGoalInput'),cycleCompletedInput=document.getElementById('cycleCompletedInput');
+function fillGoalSettings(){dailyGoalInput.value=C.dailyGoal;monthlyGoalInput.value=monthlyGoalMinutes;cycleCompletedInput.value=cycleProgress()}
+fillGoalSettings();
+document.getElementById('saveGoalsBtn').addEventListener('click',()=>{
+  const daily=Number(dailyGoalInput.value),monthly=Number(monthlyGoalInput.value),cycleCompleted=cycleCompletedInput.value.trim()===''?0:Number(cycleCompletedInput.value);
+  if(!Number.isSafeInteger(daily)||daily<=0||!Number.isSafeInteger(monthly)||monthly<=0||!Number.isSafeInteger(cycleCompleted)||cycleCompleted<0){alert('Informe metas maiores que zero e minutos já concluídos como número inteiro igual ou maior que zero.');fillGoalSettings();return}
+  const oldDaily=C.dailyGoal,oldMonthly=monthlyGoalMinutes,oldCycleCompleted=Number(s.cycleManualMinutes)||0,oldCycleSnapshot=Number(s.cycleManualTrackedSnapshot)||0;C.dailyGoal=daily;monthlyGoalMinutes=monthly;s.cycleManualMinutes=cycleCompleted;s.cycleManualTrackedSnapshot=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
+  try{localStorage.setItem(DAILYK,String(daily));localStorage.setItem(MONTHLYK,String(monthly));if(!save())throw new Error('storage')}
+  catch(e){C.dailyGoal=oldDaily;monthlyGoalMinutes=oldMonthly;s.cycleManualMinutes=oldCycleCompleted;s.cycleManualTrackedSnapshot=oldCycleSnapshot;try{localStorage.setItem(DAILYK,String(oldDaily));localStorage.setItem(MONTHLYK,String(oldMonthly))}catch(ignore){}alert('Não foi possível salvar as metas e o progresso do ciclo. Os valores anteriores foram mantidos.');fillGoalSettings();return}
+  render();alert('Metas e minutos já concluídos no ciclo atualizados!');
+});
+const dollarRateInput=document.getElementById('dollarRate'),feeRateInput=document.getElementById('feeRate'),hourlyRateInput=document.getElementById('hourlyRate');
+function fillFinancialSettings(){
+  hourlyRateInput.value=C.hourly.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:4});
+  dollarRateInput.value=fx.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:6});
+  feeRateInput.value=(fee*100).toLocaleString('pt-BR',{maximumFractionDigits:3});
+}
+hourlyRateInput.addEventListener('change',()=>{
+  const value=parseDecimal(hourlyRateInput.value);
+  if(!Number.isFinite(value)||value<=0){alert('Informe um valor por hora válido maior que zero.');fillFinancialSettings();return}
+  const old=C.hourly;C.hourly=value;
+  try{localStorage.setItem(HOURK,String(C.hourly))}catch(e){C.hourly=old;alert('Não foi possível salvar o valor por hora. O valor anterior foi mantido.')}
+  fillFinancialSettings();render();
+});
+dollarRateInput.addEventListener('change',()=>{
+  const value=parseDecimal(dollarRateInput.value);
+  if(!Number.isFinite(value)||value<=0){alert('Informe uma cotação válida maior que zero.');fillFinancialSettings();return}
+  const old=fx;fx=value;
+  try{localStorage.setItem(FXK,String(fx))}catch(e){fx=old;alert('Não foi possível salvar a cotação. O valor anterior foi mantido.')}
+  fillFinancialSettings();render();
+});
+feeRateInput.addEventListener('change',()=>{
+  const value=parseDecimal(feeRateInput.value);
+  if(!Number.isFinite(value)||value<0||value>=100){alert('Informe uma taxa entre 0% e 99,99%.');fillFinancialSettings();return}
+  const old=fee;fee=value/100;
+  try{localStorage.setItem(FEEK,String(fee))}catch(e){fee=old;alert('Não foi possível salvar a taxa. O valor anterior foi mantido.')}
+  fillFinancialSettings();render();
+});
+document.getElementById('dashboardTab').onclick=()=>showView('dashboard');
+document.getElementById('historyTab').onclick=()=>showView('history');
+document.getElementById('settingsTab').onclick=()=>{fillSettings();showView('settings')};
+document.getElementById('officialHoursTab').onclick=()=>showView('official');
+document.getElementById('officialHoursBack').onclick=()=>showView('dashboard');
+document.getElementById('backToDashboard').onclick=()=>showView('dashboard');
+document.getElementById('settingsBack').onclick=()=>showView('dashboard');
+document.getElementById('newCycleGoalBtn').onclick=resetMonth;
+document.getElementById('newDailyGoalBtn').onclick=()=>{
+  const before=snapshotState();
+  const previous={daily:s.daily,day:s.day};
+  s.last={type:'newDailyGoal',previous};
+  s.daily=0;s.day=key();
+  if(!saveOrRestore(before)){render();return}
+  render();
+};
+
+function rolloverIfNeeded(){
+  // O ciclo não acompanha o calendário. Só é encerrado manualmente pela pessoa.
+  if(!s.cycleStartedAt)s.cycleStartedAt=new Date().toISOString();
+  if(!Number.isSafeInteger(Number(s.cyclePaid))||Number(s.cyclePaid)<0)s.cyclePaid=0;
+}
+function lifetimeRaw(){
+  const archived=Array.isArray(s.history)?s.history:[];
+  const paid=(Array.isArray(s.payments)?s.payments:[]).reduce((sum,p)=>sum+(Number(p.minutes)||0),0);
+  const archivedAccepted=archived.reduce((sum,m)=>sum+(Number(m.accepted)||0),0);
+  const archivedPending=archived.reduce((sum,m)=>sum+(Number(m.pending)||Math.max(0,(Number(m.total)||0)-(Number(m.accepted)||0)-(Number(m.rejected)||0))),0);
+  const archivedRejected=archived.reduce((sum,m)=>sum+(Number(m.rejected)||0),0);
+  return {paid,accepted:archivedAccepted+(Number(s.accepted)||0),pending:archivedPending+Math.max(0,(Number(s.total)||0)-(Number(s.accepted)||0)-(Number(s.rejected)||0)),rejected:archivedRejected+(Number(s.rejected)||0)};
+}
+function lifetimeTotals(){
+  const raw=lifetimeRaw(),adjust=s.lifetimeAdjust&&typeof s.lifetimeAdjust==='object'?s.lifetimeAdjust:{};
+  return {paid:Math.max(0,raw.paid+(Number(adjust.paid)||0)),accepted:Math.max(0,raw.accepted+(Number(adjust.accepted)||0)),pending:Math.max(0,raw.pending+(Number(adjust.pending)||0)),rejected:Math.max(0,raw.rejected+(Number(adjust.rejected)||0))};
+}
+function renderLifetime(){
+  const totals=lifetimeTotals();
+  const total=totals.paid+totals.accepted+totals.pending+totals.rejected;
+  putMin('lifeTotal',total);
+  putMin('lifePaid',totals.paid);
+}
+function render(){
+  rolloverIfNeeded();
+  const lifetime=lifetimeTotals();
+  const lifetimeTotal=lifetime.paid+lifetime.accepted+lifetime.pending+lifetime.rejected;
+  renderLifetime();
+  // Minutos pagos permanecem somente no resumo histórico. Eles não entram mais
+  // em 'Aceitas' nem em 'Gravado total', pois já foram baixados dos totais operacionais.
+  // O resumo desde o início continua somando pagos + aceitos não pagos + análise + reprovados.
+  const pending=lifetime.pending,operationalTotal=lifetime.accepted+pending+lifetime.rejected;
+  const a=calc(lifetime.accepted),q=calc(pending),r=calc(lifetime.rejected);
+  putMin('accepted',lifetime.accepted);document.getElementById('acceptedMoney').innerHTML=us(a.u)+' · '+br(a.g)+'<br>Líquido: '+br(a.n);
+  putMin('total',operationalTotal);put('hours','Equivale a '+(operationalTotal/60).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' h');
+  putMin('pending',pending);document.getElementById('pendingMoney').innerHTML=us(q.u)+' · '+br(q.g)+'<br>Líquido: '+br(q.n);
+  putMin('rejected',lifetime.rejected);put('rejectedMoney',br(r.g));
+  put('dailyCount',fmtMin(s.daily)+' / '+fmtMin(C.dailyGoal)+' min');
+  put('dailyDone','Feitos: '+fmtMin(s.daily)+' min');
+  put('dailyLeft','Faltam: '+fmtMin(Math.max(0,C.dailyGoal-s.daily))+' min');
+  document.getElementById('dailyBar').style.width=Math.min(100,s.daily/C.dailyGoal*100)+'%';
+  const goal=monthlyGoal(), monthlyRecorded=cycleProgress(), monthlyPct=monthlyRecorded/goal*100;
+  put('monthlyGoalCaption','Meta configurada de '+fmtMin(goal)+' minutos válidos neste ciclo');
+  put('monthlyCount',fmtMin(monthlyRecorded)+' / '+fmtMin(goal)+' min');
+  put('monthlyPct',monthlyPct.toLocaleString('pt-BR',{maximumFractionDigits:2})+'% concluído');
+  const monthlyRemaining=Math.max(0,goal-monthlyRecorded);
+  put('monthlyLeft','Faltam '+fmtMin(monthlyRemaining)+' min');
+  const paceEl=document.getElementById('monthlyDailyPace');
+  if(monthlyRemaining===0) paceEl.textContent='Meta do ciclo atingida!';
+  else paceEl.textContent=fmtMin(monthlyRemaining)+' minutos válidos restantes para concluir o ciclo.';
+  document.getElementById('monthlyBar').style.width=Math.min(100,Math.max(0,monthlyPct))+'%';
+}
+function validWholeNumber(raw){
+  if(String(raw).trim()==='')return null;
+  const n=Number(raw);
+  return Number.isSafeInteger(n)&&n>=0?n:null;
+}
+function addRecord(){
+  const f=document.getElementById('recordInput'),n=validWholeNumber(f.value);
+  if(n===null||n<1){alert('Informe um número inteiro de minutos maior que zero.');f.focus();return}
+  const before=snapshotState();
+  const previous={total:s.total,daily:s.daily};
+  if(s.total+n>Number.MAX_SAFE_INTEGER||s.daily+n>Number.MAX_SAFE_INTEGER){alert('Esse valor é muito alto.');return}
+  s.total+=n;s.daily+=n;s.records.push({minutes:n,date:new Date().toISOString()});s.last={type:'record',previous,recordsLength:s.records.length-1,day:key()};
+  if(!saveOrRestore(before)){render();return}
+  f.value='';render();
+}
+document.getElementById('recordBtn').onclick=addRecord;
+document.getElementById('recordInput').addEventListener('keydown',e=>{if(e.key==='Enter')addRecord()});
+function fillSettings(){
+  fillFinancialSettings();
+  document.getElementById('profileNameInput').value=profileName;
+  const lifetime=lifetimeTotals();
+  document.getElementById('lifePaidInput').value=lifetime.paid;
+  document.getElementById('lifePaidInput').dataset.basePaid=String(lifetime.paid);
+  document.getElementById('lifeAcceptedInput').value=lifetime.accepted;
+  document.getElementById('lifePendingInput').value=lifetime.pending;
+  // Guarda a referência inicial para reclassificar minutos: ao aumentar aceitos,
+  // a mesma quantidade sai automaticamente de 'em análise' (e vice-versa).
+  document.getElementById('lifeAcceptedInput').dataset.baseAccepted=String(lifetime.accepted);
+  document.getElementById('lifeRejectedInput').dataset.baseRejected=String(lifetime.rejected);
+  document.getElementById('lifePendingInput').dataset.basePending=String(lifetime.pending);
+  document.getElementById('lifeRejectedInput').value=lifetime.rejected;
+  
+}
+document.getElementById('saveProfileNameBtn').onclick=()=>{
+  const next=document.getElementById('profileNameInput').value.trim();
+  if(!next){alert('Informe um nome.');return}
+  try{localStorage.setItem(PROFILEK,next);profileName=next;document.getElementById('profileNameTitle').textContent=profileName?' - '+profileName:'';alert('Nome atualizado neste aparelho.')}
+  catch(e){alert('Não foi possível salvar o nome neste aparelho.')}
+};
+function updatePendingAfterReclassification(){
+  const acceptedInput=document.getElementById('lifeAcceptedInput');
+  const rejectedInput=document.getElementById('lifeRejectedInput');
+  const pendingInput=document.getElementById('lifePendingInput');
+  const accepted=validWholeNumber(acceptedInput.value);
+  const rejected=validWholeNumber(rejectedInput.value);
+  const baseAccepted=Number(acceptedInput.dataset.baseAccepted);
+  const baseRejected=Number(rejectedInput.dataset.baseRejected);
+  const basePending=Number(pendingInput.dataset.basePending);
+  if(accepted===null||rejected===null||!Number.isSafeInteger(baseAccepted)||!Number.isSafeInteger(baseRejected)||!Number.isSafeInteger(basePending))return;
+  // Aumentos em aceitos/reprovados reclassificam primeiro minutos que estavam em análise.
+  // Reduções devolvem a mesma quantidade para análise. O limite zero evita minutos negativos.
+  const acceptedDelta=accepted-baseAccepted;
+  const rejectedDelta=rejected-baseRejected;
+  pendingInput.value=Math.max(0,basePending-acceptedDelta-rejectedDelta);
+}
+function updateAvailableAfterPaidChange(){
+  const paidInput=document.getElementById('lifePaidInput');
+  const acceptedInput=document.getElementById('lifeAcceptedInput');
+  const pendingInput=document.getElementById('lifePendingInput');
+  const rejectedInput=document.getElementById('lifeRejectedInput');
+  const paid=validWholeNumber(paidInput.value),basePaid=Number(paidInput.dataset.basePaid);
+  const baseAccepted=Number(acceptedInput.dataset.baseAccepted);
+  const basePending=Number(pendingInput.dataset.basePending);
+  const baseRejected=Number(rejectedInput.dataset.baseRejected);
+  if(paid===null||![basePaid,baseAccepted,basePending,baseRejected].every(Number.isSafeInteger))return;
+  const delta=paid-basePaid;
+  let accepted=baseAccepted,pending=basePending,rejected=baseRejected;
+  if(delta>0){
+    let remaining=delta;
+    const fromAccepted=Math.min(accepted,remaining);accepted-=fromAccepted;remaining-=fromAccepted;
+    const fromPending=Math.min(pending,remaining);pending-=fromPending;remaining-=fromPending;
+    const fromRejected=Math.min(rejected,remaining);rejected-=fromRejected;remaining-=fromRejected;
+    if(remaining>0){paidInput.setCustomValidity('Os minutos pagos não podem ultrapassar o total disponível.');return}
+    paidInput.setCustomValidity('');
+  }else if(delta<0){pending+=Math.abs(delta);paidInput.setCustomValidity('');}
+  else paidInput.setCustomValidity('');
+  acceptedInput.value=accepted;pendingInput.value=pending;rejectedInput.value=rejected;
+}
+document.getElementById('lifePaidInput').addEventListener('input',updateAvailableAfterPaidChange);
+document.getElementById('lifeAcceptedInput').addEventListener('input',updatePendingAfterReclassification);
+document.getElementById('lifeRejectedInput').addEventListener('input',updatePendingAfterReclassification);
+function reconcilePaymentHistory(targetPaid,oldPaid){
+  const delta=targetPaid-oldPaid;
+  if(delta>0){
+    const financial=calc(delta);
+    s.payments.push({minutes:delta,date:new Date().toISOString(),usd:financial.u,gross:financial.g,net:financial.n,fx,fee,cycleId:'cycle-'+(s.cycleStartedAt||'legacy')});
+  }else if(delta<0){
+    let remove=-delta;
+    for(let i=s.payments.length-1;i>=0&&remove>0;i--){
+      const payment=s.payments[i],minutes=Math.max(0,Number(payment.minutes)||0);
+      const take=Math.min(minutes,remove),keep=minutes-take,ratio=minutes>0?keep/minutes:0;
+      payment.minutes=keep;payment.usd=(Number(payment.usd)||0)*ratio;payment.gross=(Number(payment.gross)||0)*ratio;payment.net=(Number(payment.net)||0)*ratio;remove-=take;
+      if(payment.minutes===0)s.payments.splice(i,1);
+    }
+  }
+}
+document.getElementById('updateLifetimeBtn').onclick=()=>{
+  const ids=['lifePaidInput','lifeAcceptedInput','lifePendingInput','lifeRejectedInput'];
+  const vals=ids.map(id=>validWholeNumber(document.getElementById(id).value));
+  if(vals.some(v=>v===null)){alert('Preencha os quatro campos com números inteiros iguais ou maiores que zero.');return}
+  const [paid,accepted,pending,rejected]=vals,raw=lifetimeRaw(),previousAdjust=s.lifetimeAdjust?{...s.lifetimeAdjust}:null;
+  const paidBase=Number(document.getElementById('lifePaidInput').dataset.basePaid||0);
+  const availableBase=Number(document.getElementById('lifeAcceptedInput').dataset.baseAccepted||0)+Number(document.getElementById('lifePendingInput').dataset.basePending||0)+Number(document.getElementById('lifeRejectedInput').dataset.baseRejected||0);
+  if(paid>paidBase && accepted+pending+rejected!==availableBase-(paid-paidBase)){alert('O aumento de minutos pagos precisa ser descontado do saldo disponível entre Aceitas, Em análise e Reprovadas. Confira os valores antes de salvar.');return}
+  const before=snapshotState();
+  reconcilePaymentHistory(paid,raw.paid);
+  s.lifetimeAdjust={paid:0,accepted:accepted-raw.accepted,pending:pending-raw.pending,rejected:rejected-raw.rejected};
+  if(!saveOrRestore(before)){fillSettings();return}
+  render();fillSettings();alert('Minutos desde o início atualizados. O total geral foi recalculado pela soma das quatro categorias.');
+};
+document.getElementById('undo').onclick=()=>{
+  if(!s.last){alert('Não há nenhuma ação para desfazer.');return}
+  const before=snapshotState();
+  const action=s.last,{type,previous}=action;
+  if(type==='record'){s.total=previous.total;s.daily=previous.daily;if(Number.isInteger(action.recordsLength))s.records.splice(action.recordsLength)}
+  else if(type==='accept')s.accepted=previous;
+  else if(type==='reject')s.rejected=previous;
+  else if(type==='settingsUpdate'){s.total=previous.total;s.accepted=previous.accepted;s.rejected=previous.rejected}
+  else if(type==='newDailyGoal'){s.daily=previous.daily;s.day=previous.day}
+  else if(type==='payment'&&action.previousState){Object.assign(s,action.previousState)}
+  else if(type==='resetMonth'){s.period=previous.period;s.total=previous.total;s.accepted=previous.accepted;s.rejected=previous.rejected;s.daily=previous.daily;s.day=previous.day;s.history=previous.history.slice();s.records=(previous.records||[]).slice();s.cyclePaid=previous.cyclePaid||0;s.cycleManualMinutes=previous.cycleManualMinutes||0;s.cycleManualTrackedSnapshot=previous.cycleManualTrackedSnapshot||0;s.cycleStartedAt=previous.cycleStartedAt||s.cycleStartedAt}
+  s.last=0;
+  if(!saveOrRestore(before)){render();return}
+  render();
+};
+function promptInitialMinutes(question){
+  while(true){
+    const raw=prompt(question,'0');
+    if(raw===null)return null;
+    const value=String(raw).trim();
+    if(value!==''&&/^\d+$/.test(value)&&Number.isSafeInteger(Number(value)))return Number(value);
+    alert('Informe um número inteiro de minutos igual ou maior que zero.');
+  }
+}
+function runFirstAccessSetup(){
+  if(hadSavedState)return;
+  try{if(localStorage.getItem(FIRSTSETUPK)==='1')return}catch(e){}
+  while(true){
+    const total=promptInitialMinutes('Quantos minutos você tem gravados desde o início na Perle?');if(total===null)return;
+    const paid=promptInitialMinutes('Quantos desses minutos já foram pagos?');if(paid===null)return;
+    const pending=promptInitialMinutes('Quantos desses minutos estão em análise?');if(pending===null)return;
+    const today=promptInitialMinutes('Quantos desses minutos foram gravados hoje? (para que seja adicionado na meta diária)');if(today===null)return;
+    const rejected=promptInitialMinutes('Quantos desses minutos foram rejeitados?');if(rejected===null)return;
+    if(paid+pending+rejected>total||today>total){
+      alert('A soma de minutos pagos, em análise e rejeitados não pode ultrapassar os minutos gravados desde o início. Os minutos de hoje também não podem ultrapassar o total geral. Vamos informar os valores novamente.');
+      continue;
+    }
+    const accepted=total-paid-pending-rejected;
+    // Os minutos pagos são separados do saldo operacional; o restante é distribuído
+    // entre aceitos não pagos, em análise e rejeitados sem alterar as regras existentes.
+    s.total=total-paid;
+    s.accepted=accepted;
+    s.rejected=rejected;
+    s.daily=today;
+    s.day=key();
+    if(!Array.isArray(s.records))s.records=[];
+    if(!Array.isArray(s.payments))s.payments=[];
+    if(paid>0){
+      const financial=calc(paid),date=new Date().toISOString();
+      s.payments.push({minutes:paid,date,usd:financial.u,gross:financial.g,net:financial.n,fx,fee,cycleId:'cycle-'+(s.cycleStartedAt||date)});
+    }
+    s.cyclePaid=paid;
+    s.cycleManualMinutes=0;
+    s.cycleManualTrackedSnapshot=Math.max(0,(Number(s.total)||0)-(Number(s.rejected)||0))+(Number(s.cyclePaid)||0);
+    s.cycleStartedAt=new Date().toISOString();
+    if(!save())return;
+    try{localStorage.setItem(FIRSTSETUPK,'1')}catch(e){}
+    alert('Configuração inicial concluída! Os minutos restantes foram registrados como aceitos (não pagos).');
+    return;
+  }
+}
+let persistStartupState=!initialSetupPending;try{if(localStorage.getItem(FIRSTSETUPK)==='1')persistStartupState=true}catch(e){}
+runFirstAccessSetup();
+try{if(localStorage.getItem(FIRSTSETUPK)==='1')persistStartupState=true}catch(e){}
+if(persistStartupState)save();render();if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>
